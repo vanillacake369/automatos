@@ -21,7 +21,6 @@ export class AppController {
   @Render('index')
   root() {
     const content = '# Hello, World!\n\nThis is some **Markdown** text.';
-    console.log(path.join(__dirname, '../handlebars', 'public'));
     return { content, message: 'Hello world!' };
   }
 
