@@ -1,4 +1,29 @@
-<p align="center">
+## 🌎 Overview
+
+<aside>
+💡 개발자들을 위한 note taking app 혹은 posting service가 없을까?
+
+블로그 , 포스트,공부용 노트를 작성 시, 단축키 혹은 자체 지원 기능들을 통해 여러 IDE에 있는 기능들을 노트 작성할 때도 이용할 수 있다면??
+
+(who, what, when, where, and the notorious why)
+
+(개발자, 노트앱, 공부, 웹, 여러 기능들을 이용하면서 노트 작성 시 편의성 제공)
+
+</aside>
+
+## 👷‍♀️ Problem Space (Job to be done)
+
+You can also think of it like a techie mad-lib: As **\_**, I want to **\_**, so that I can **\_\_**
+
+> 변수를 선언한 코드 블럭이 있다면, 노트 작성 시 변수 이름 자동완성 기능이 지원되면 좋지 않을까?
+
+> 사용 언어에 따라 자동완성 기능이 지원되면 좋지 않을까?
+
+> GitHub에 있는 코드들을 불러올 수 있다면 좋지 않을까?
+
+> VSCode에 있는 코드들을 불러올 수 있다면 좋지 않을까?
+
+<!-- <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
@@ -20,7 +45,7 @@
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)--> -->
 
 ## Description
 
@@ -57,17 +82,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
