@@ -1,33 +1,38 @@
-// import { Controller, Get } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Request,
+  Res,
+  Body,
+  Render,
+  Post,
+} from '@nestjs/common';
+import { Response } from 'express';
 
-import { Controller, Get, Render } from '@nestjs/common';
-import * as path from 'path';
-
-// import { Controller, Get, Res, Render } from '@nestjs/common';
-// import { Response } from 'express';
-// import { AppService } from './app.service';
+import { AppService } from './app.service';
+import { AutoCompleteService } from './auto-complete/auto-complete.service';
 
 @Controller()
 export class AppController {
-  // constructor(private readonly appService: AppService) {}
+  // singleton of injected services
+  constructor(
+    private readonly appService: AppService,
+    private readonly autoCompleteService: AutoCompleteService,
+  ) {}
 
-  // constructor(private appService: AppService) {}
-
-  // getHello(): string {
-  //   return this.appService.getHello();
-  // }
-
+  // root
   @Get()
   @Render('index')
   root() {
-    const content = '# Hello, World!\n\nThis is some **Markdown** text.';
-    return { content, message: 'Hello world!' };
+    const content = '- [ ] This is some **Markdown** text.';
+    return this.autoCompleteService.setMarkDown(content);
+    // return { content, message: 'Hello world!' };
   }
 
-  // @Get()
-  // root(@Res() res: Response) {
-  //   return res.render(this.appService.getViewName(), {
-  //     message: 'Hello world!',
-  //   });
-  // }
+  // AJAX POST Request :: when markdown text input
+  @Post('/')
+  @Render('index')
+  renderInputMarkDown(@Body() body: { text: string }) {
+    return this.autoCompleteService.renderInputMarkDown(body?.text);
+  }
 }
