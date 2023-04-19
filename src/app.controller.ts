@@ -7,18 +7,21 @@ import {
   Render,
   Post,
 } from '@nestjs/common';
-import { Response } from 'express';
-
+import * as MarkdownIt from 'markdown-it';
 import { AppService } from './app.service';
 import { AutoCompleteService } from './auto-complete/auto-complete.service';
 
 @Controller()
 export class AppController {
   // singleton of injected services
+  private readonly md;
+
   constructor(
     private readonly appService: AppService,
     private readonly autoCompleteService: AutoCompleteService,
-  ) {}
+  ) {
+    this.md = new MarkdownIt();
+  }
 
   // root
   @Get()
@@ -33,6 +36,8 @@ export class AppController {
   @Post('/')
   @Render('index')
   renderInputMarkDown(@Body() body: { text: string }) {
-    return this.autoCompleteService.renderInputMarkDown(body?.text);
+    const renderedInput = this.md.render(body?.text);
+    return { content: '', renderedInput };
+    // return this.autoCompleteService.renderInputMarkDown(body?.text);
   }
 }

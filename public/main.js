@@ -12,9 +12,11 @@ window.onload = () => {
     // xhr.open('POST', '/markdown');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
+      console.log(xhr.status);
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
         // update the page with the response
+        console.log(response);
         renderedInput.innerHTML = response.renderedInput;
       }
     };
