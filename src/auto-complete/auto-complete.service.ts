@@ -6,13 +6,7 @@ export class AutoCompleteService {
     return { content };
   }
   renderInputMarkDown(input: string) {
-    // console.log('render input text');
     console.log(input);
     return { renderedInput: input };
   }
-  // renderInputMarkDown(body: Request) {
-  //   console.log('render input text');
-  //   console.log(body);
-  //   return { body };
-  // }
 }

@@ -26,6 +26,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "handlebars": "^4.7.7",
+    "handlebars-async-helpers": "^1.0.5",
     "hbs": "^4.2.0",
     "markdown-it": "^13.0.1",
     "marked": "^4.3.0",

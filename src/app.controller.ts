@@ -29,15 +29,16 @@ export class AppController {
   root() {
     const content = '- [ ] This is some **Markdown** text.';
     return this.autoCompleteService.setMarkDown(content);
-    // return { content, message: 'Hello world!' };
   }
 
   // AJAX POST Request :: when markdown text input
   @Post('/')
   @Render('index')
   renderInputMarkDown(@Body() body: { text: string }) {
+    /** markdown-it API 사용 */
     const renderedInput = this.md.render(body?.text);
     return { content: '', renderedInput };
+    /** autoCompleteService 사용 */
     // return this.autoCompleteService.renderInputMarkDown(body?.text);
   }
 }

@@ -11,7 +11,7 @@ window.onload = () => {
     xhr.open('POST', '/');
     // xhr.open('POST', '/markdown');
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onload = function () {
+    xhr.onload = () => {
       console.log(xhr.status);
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
