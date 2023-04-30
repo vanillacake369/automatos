@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import * as MarkdownIt from 'markdown-it';
 
 @Injectable()
 export class AutoCompleteService {
@@ -6,7 +7,9 @@ export class AutoCompleteService {
     return { content };
   }
   renderInputMarkDown(input: string) {
-    console.log(input);
-    return { renderedInput: input };
+    /** markdown-it API 사용 */
+    var md = new MarkdownIt();
+    const renderedInput = md.render(input);
+    return { content: '', renderedInput };
   }
 }
