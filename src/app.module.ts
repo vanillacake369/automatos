@@ -3,9 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AutoCompleteModule } from './auto-complete/auto-complete.module';
 import { LoggerMiddleware } from './logger/logger.middleware';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [AutoCompleteModule],
+  imports: [
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.MONGO_PATH),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

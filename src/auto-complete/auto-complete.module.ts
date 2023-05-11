@@ -7,4 +7,7 @@ import { AutoCompleteService } from './auto-complete.service';
   providers: [AutoCompleteService],
   exports: [AutoCompleteService],
 })
-export class AutoCompleteModule {}
+export class AutoCompleteModule { }
+
+
+
