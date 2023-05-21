@@ -17,13 +17,13 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   /* View 세팅 */
-  // set view engine to hbs
+  /* // set view engine to hbs
   app.setViewEngine('hbs');
   // use static assets & set view
   app.setBaseViewsDir(join(__dirname, '..', '..', 'views'));
   app.useStaticAssets(join(__dirname, '..', '..', 'public'));
   // register partials and helper to "handlebars instance"
-  hbs.registerHelper('renderMarkdown', renderMarkdown);
+  hbs.registerHelper('renderMarkdown', renderMarkdown); */
 
   await app.listen(process.env.PORT);
 }

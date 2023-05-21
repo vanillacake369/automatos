@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AutoCompleteService } from './auto-complete.service';
+import { NotesService } from './notes.service';
 
-describe('AutoCompleteService', () => {
-  let service: AutoCompleteService;
+describe('NotesService', () => {
+  let service: NotesService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [AutoCompleteService],
+      providers: [NotesService],
     }).compile();
 
-    service = module.get<AutoCompleteService>(AutoCompleteService);
+    service = module.get<NotesService>(NotesService);
   });
 
   it('should be defined', () => {
