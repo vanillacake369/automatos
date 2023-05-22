@@ -25,6 +25,7 @@ async function bootstrap() {
   // register partials and helper to "handlebars instance"
   hbs.registerHelper('renderMarkdown', renderMarkdown); */
 
-  await app.listen(process.env.PORT);
+  const PORT = process.env.SERVER_PORT;
+  await app.listen(PORT);
 }
 bootstrap();
